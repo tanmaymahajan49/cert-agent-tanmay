@@ -1,0 +1,53 @@
+<div class="app">
+
+  <div class="sidebar">
+
+    <div class="logo">
+      🤖 CertiBot
+    </div>
+
+    <div class="menu">
+      <div class="menu-item">✨ New Chat</div>
+      <div class="menu-item">🔐 Status</div>
+      <div class="menu-item">🛠 Create</div>
+      <div class="menu-item">♻ Renew</div>
+    </div>
+
+  </div>
+
+  <div class="chat-section">
+
+    <div class="header">
+      Certificate AI Assistant 🚀
+    </div>
+
+    <div class="chat-window">
+
+      <div
+        *ngFor="let msg of messages"
+        [ngClass]="msg.sender">
+
+        <div class="bubble">
+          {{ msg.text }}
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="input-area">
+
+      <input
+        [(ngModel)]="userInput"
+        placeholder="Ask me anything..."
+        (keyup.enter)="sendMessage()">
+
+      <button (click)="sendMessage()">
+        ➤
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
